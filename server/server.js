@@ -22,7 +22,7 @@ mongoose.connect(process.env.DBURL)
 
 
 
-
+app.use(exp.json())
 // connecting api routes
 app.use('/user-api',userApp)
 app.use('/author-api',authorApp)

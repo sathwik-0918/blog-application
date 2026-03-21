@@ -1,3 +1,58 @@
 GET http://localhost:3000/user-api/users
 
 ###
+
+### CLIENT'S HTTP REQUEST
+
+
+###create author
+POST http://localhost:3000/author-api/author
+Content-Type: application/json
+
+{
+  "role":"user",
+  "firstName":"author1",
+  "lastName":"author1",
+  "email":"author1@gmail.com",
+  "profileImgUrl":"author image",
+  "isActive":true
+}
+
+###create user
+POST http://localhost:3000/user-api/user
+Content-Type: application/json
+
+{
+  "role":"author",
+  "firstName":"user1",
+  "lastName":"user1",
+  "email":"user1@gmail.com",
+  "profileImgUrl":"user image",
+  "isActive":true
+}
+
+### post new article
+POST http://localhost:3000/author-api/article
+Content-Type: application/json
+
+{
+  "authorData": {
+    "nameOfAuthor": "author1",
+    "email": "author1@gmail.com",
+    "profileImageUrl": "author1 image"
+  },
+  "articleId": "{{$timestamp}}",
+  "title": "Fundamentals of JavaScript",
+  "category": "test",
+  "content": "JavaScript often abbreviated as JS,is a programming language and core technology of the web",
+  "dateOfCreation": "{{$datetime iso8601}}",
+  "dateOfModification": "{{$datetime iso8601}}",
+  "isArticleActive": true,
+  "comments": []
+}
+
+### read all articles by user
+GET http://localhost:3000/user-api/articles
+
+### read all articles by author
+GET http://localhost:3000/author-api/articles

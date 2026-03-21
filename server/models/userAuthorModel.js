@@ -17,6 +17,7 @@ const userAuthorSchema=new Schema({
   email:{
     type:String,
     required:true,
+    unique:true
   },
   profileImgUrl:{
     type:String,
