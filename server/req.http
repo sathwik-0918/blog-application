@@ -56,3 +56,52 @@ GET http://localhost:3000/user-api/articles
 
 ### read all articles by author
 GET http://localhost:3000/author-api/articles
+
+### edit artcile by id
+PUT http://localhost:3000/author-api/article/1774169186
+Content-Type: application/json
+
+{
+  "_id":"69be7ceb143b6fde07e07eb5",
+  "authorData": {
+    "nameOfAuthor": "",
+    "email": "",
+    "profileImageUrl": ""
+  },
+  "articleId": "{{$timestamp}}",
+  "title": "Fundamentals of Js",
+  "category": "programming",
+  "content": "JavaScript often abbreviated as JS,is a programming language and core technology of the web",
+  "dateOfModification": "{{$datetime iso8601}}",
+  "isArticleActive": true,
+  "comments": []
+}
+
+### delete article by article Id
+PUT http://localhost:3000/author-api/articles/1774169186
+Content-Type: application/json
+
+{
+  "_id":"69be7ceb143b6fde07e07eb5",
+  "authorData": {
+    "nameOfAuthor": "",
+    "email": "",
+    "profileImageUrl": ""
+  },
+  "articleId": "{{$timestamp}}",
+  "title": "Fundamentals of Js",
+  "category": "programming",
+  "content": "JavaScript often abbreviated as JS,is a programming language and core technology of the web",
+  "dateOfModification": "{{$datetime iso8601}}",
+  "isArticleActive": false,
+  "comments": []
+}
+
+### post comment by article id
+PUT http://localhost:3000/user-api/comment/1774170132
+Content-Type: application/json
+
+{
+  "nameOfUser": "user1",
+  "comment": "best article"
+}

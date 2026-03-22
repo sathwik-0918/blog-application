@@ -23,6 +23,31 @@ authorApp.post("/article",expressAsyncHandler(async(req,res)=>{
 // read all articles
 authorApp.get("/articles",expressAsyncHandler(async(req,res)=>{
   // read all articles from db
-  const listOfArticles=await Article.find();
+  const listOfArticles=await Article.find({isArticleActive:true});
   res.status(200).send({message:"articles",payload:listOfArticles})
+}))
+
+// modify an article by article Id
+authorApp.put("/article/:articleId",expressAsyncHandler(async(req,res)=>{
+  // get the modified article
+  const modifiedArticle=req.body;
+  // update article by article Id
+  const dbRes=await Article.findByIdAndUpdate(modifiedArticle._id,
+    {...modifiedArticle},
+    {returnOriginal:false})
+  // send res
+  res.status(200).send({message:"article modified",payload:dbRes})
+}))
+
+// delete(soft delete) an article by article Id
+// modify an article by article Id
+authorApp.put("/articles/:articleId",expressAsyncHandler(async(req,res)=>{
+  // get the modified article
+  const modifiedArticle=req.body;
+  // update article by article Id
+  const dbRes=await Article.findByIdAndUpdate(modifiedArticle._id,
+    {...modifiedArticle},
+    {returnOriginal:false})
+  // send res
+  res.status(200).send({message:"article deleted",payload:dbRes})
 }))
