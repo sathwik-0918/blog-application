@@ -1,0 +1,13 @@
+.header{
+  margin-bottom: 50px;
+  background-image: linear-gradient(to bottom,#aba5a5,#bcb7b8);
+}
+
+.header-links{
+  width: 250px;
+}
+
+.header a{
+  text-decoration: none;
+  color: white;
+}
