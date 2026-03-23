@@ -2,9 +2,19 @@ import React from 'react'
 import Header from './common/Header.jsx'
 import Footer from './common/Footer.jsx'
 import { Outlet } from 'react-router-dom'
+import { ClerkProvider } from '@clerk/react'
+
+
+// import ur publishable key
+const PUBLISHABLE_KEY=import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if(!PUBLISHABLE_KEY){
+  throw new Error("Missing Publishable Key")
+}
 
 function Rootlayout() {
   return (
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
     <div>
       <Header />
         <div style={{minHeight:"90vh"}}>
@@ -12,6 +22,7 @@ function Rootlayout() {
         </div>
       <Footer />
     </div>
+    </ClerkProvider>
   )
 }
 
