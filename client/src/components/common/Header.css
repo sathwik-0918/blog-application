@@ -1,6 +1,7 @@
 .header{
   margin-bottom: 50px;
   background-image: linear-gradient(to bottom,#aba5a5,#bcb7b8);
+  height: 75px;
 }
 
 .header-links{
@@ -10,4 +11,24 @@
 .header a{
   text-decoration: none;
   color: white;
+}
+
+/* Custom classes used only in Header.jsx */
+.user-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.role {
+  margin: 0;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.signout-btn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  height: auto;
 }

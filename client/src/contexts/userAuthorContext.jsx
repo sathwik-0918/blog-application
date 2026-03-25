@@ -1,7 +1,7 @@
 import {createContext,useState} from 'react'
-export const userAuthorContextObj=createContext();
+export const UserAuthorContextObj=createContext();
 
-function userAuthorContext({children}) {
+function UserAuthorContext({children}) {
 
   let[currentUser,setCurrentUser]=useState({
     firstName:'',
@@ -13,10 +13,10 @@ function userAuthorContext({children}) {
 
 
   return (
-    <userAuthorContextObj.Provider value={{currentUser,setCurrentUser}}>
+    <UserAuthorContextObj.Provider value={{currentUser,setCurrentUser}}>
       {children}
-    </userAuthorContextObj.Provider>
+    </UserAuthorContextObj.Provider>
   )
 }
 
-export default userAuthorContext
+export default UserAuthorContext

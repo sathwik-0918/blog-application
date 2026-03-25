@@ -3,6 +3,7 @@ import Header from './common/Header.jsx'
 import Footer from './common/Footer.jsx'
 import { Outlet } from 'react-router-dom'
 import { ClerkProvider } from '@clerk/react'
+import UserAuthorContext from '../contexts/UserAuthorContext.jsx'
 
 
 // import ur publishable key
@@ -14,6 +15,7 @@ if(!PUBLISHABLE_KEY){
 
 function Rootlayout() {
   return (
+    <UserAuthorContext>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
     <div>
       <Header />
@@ -23,6 +25,7 @@ function Rootlayout() {
       <Footer />
     </div>
     </ClerkProvider>
+    </UserAuthorContext>
   )
 }
 
