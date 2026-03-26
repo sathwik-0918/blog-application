@@ -1,0 +1,32 @@
+.post-article-card {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #dddddd;
+}
+
+.post-article-title-area {
+  background: #ffffff;
+}
+
+.post-article-title {
+  color: #d09b10;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.post-article-wrapper {
+  padding-bottom: 45px;
+}
+
+.post-article-submit {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.post-article-submit:hover {
+  background-color: #3d8b40;
+  border-color: #3d8b40;
+}

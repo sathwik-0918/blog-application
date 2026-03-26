@@ -9,7 +9,6 @@ import { authorApp } from './APIs/authorApi.js';
 import { adminApp } from './APIs/adminApi.js';
 import cors from 'cors'
 app.use(cors())
-app.use(exp.json()) 
 
 
 const port=process.env.PORT || 4000;
@@ -30,3 +29,9 @@ app.use(exp.json())
 app.use('/user-api',userApp)
 app.use('/author-api',authorApp)
 app.use('/admin-api',adminApp)
+
+// error handler
+app.use((err,req,res,next)=>{
+  console.log("err object in express error handler:",err);
+  res.send({message:err.message})
+})
