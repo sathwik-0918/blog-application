@@ -7,6 +7,9 @@ import mongoose from 'mongoose'
 import { userApp } from './APIs/userApi.js';
 import { authorApp } from './APIs/authorApi.js';
 import { adminApp } from './APIs/adminApi.js';
+import cors from 'cors'
+app.use(cors())
+app.use(exp.json()) 
 
 
 const port=process.env.PORT || 4000;

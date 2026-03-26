@@ -19,7 +19,7 @@ const userAuthorSchema=new Schema({
     required:true,
     unique:true
   },
-  profileImgUrl:{
+  profileImageUrl:{
     type:String,
   },
   isActive:{
