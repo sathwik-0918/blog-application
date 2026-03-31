@@ -1,0 +1,31 @@
+.author-details {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-bottom: 8px;
+}
+
+.custom-btn {
+	border: none;
+	outline: none;
+	padding: 8px 24px;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 1rem;
+	background: #b3d8f7;
+	color: #222;
+	transition: background 0.2s, color 0.2s;
+	margin-top: 10px;
+}
+
+.custom-btn.btn-4 {
+	background: #b3d8f7;
+	color: #222;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.custom-btn.btn-4:hover {
+	background: #2196f3;
+	color: #fff;
+}
